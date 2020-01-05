@@ -15,18 +15,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.time.Instant;
 import java.util.List;
-import java.util.Map;
+
+import static com.sroeck.export.Converters.longToDouble;
+import static com.sroeck.export.Converters.toXmlGregorianCal;
 
 public class TCXBuilder implements Exporter{
 
     private static final Logger LOG = LoggerFactory.getLogger(TCXBuilder.class);
-
-    private String getTime(Map<String, Object> sportSessionData, String timeAttribute) {
-        Long start_time = (Long) sportSessionData.get(timeAttribute);
-        return Instant.ofEpochMilli(start_time).toString();
-    }
 
     private void writeContent(TrainingCenterDatabaseT root, Path destination) throws IOException {
         try {
@@ -48,14 +44,14 @@ public class TCXBuilder implements Exporter{
         gpsData.stream().forEach(row -> trackPoints.add(createTrack(row)));
     }
 
-    private TrackpointT createTrack(GPSDatum row) {
+    private TrackpointT createTrack(GPSDatum gpsDatum) {
         TrackpointT trackPoint = new TrackpointT();
-        trackPoint.setTime(Converters.toXmlGregorianCal(row.getTimestamp()));
-        trackPoint.setDistanceMeters(Converters.longToDouble(row.getDistance()));
-        trackPoint.setAltitudeMeters(row.getAltitude());
+        trackPoint.setAltitudeMeters(gpsDatum.getAltitude());
+        trackPoint.setDistanceMeters(longToDouble(gpsDatum.getDistance()));
+        trackPoint.setTime(toXmlGregorianCal(gpsDatum.getTimestamp()));
         PositionT position = new PositionT();
-        position.setLatitudeDegrees(row.getLatitude());
-        position.setLongitudeDegrees(row.getLongitude());
+        position.setLatitudeDegrees(gpsDatum.getLatitude());
+        position.setLongitudeDegrees(gpsDatum.getLongitude());
         trackPoint.setPosition(position);
         return trackPoint;
     }
@@ -63,11 +59,11 @@ public class TCXBuilder implements Exporter{
 
     private void populateLap(SportSession sportSessionData, ActivityLapT lap) {
         lap.setCalories(sportSessionData.getCalories().intValue());
-        lap.setDistanceMeters(Converters.longToDouble(sportSessionData.getDistance()));
+        lap.setDistanceMeters(longToDouble(sportSessionData.getDistance()));
         lap.setMaximumSpeed(sportSessionData.getMaxSpeed());
         lap.setNotes(sportSessionData.getNotes());
-        lap.setStartTime(Converters.toXmlGregorianCal(sportSessionData.getStartTime()));
-        lap.setTotalTimeSeconds(Converters.longToDouble(sportSessionData.getDuration()));
+        lap.setStartTime(toXmlGregorianCal(sportSessionData.getStartTime()));
+        lap.setTotalTimeSeconds(longToDouble(sportSessionData.getDuration()));
     }
 
     @Override
@@ -77,8 +73,10 @@ public class TCXBuilder implements Exporter{
         TrainingCenterDatabaseT root = new TrainingCenterDatabaseT();
         ActivityListT activities = new ActivityListT();
         ActivityT activity = new ActivityT();
+        activity.setId(toXmlGregorianCal(sportSession.getStartTime()));
+        activity.setNotes(sportSession.getNotes());
         activity.setSport(SportT.RUNNING);
-        activity.setId(Converters.toXmlGregorianCal(sportSession.getStartTime()));
+
         ActivityLapT lap = new ActivityLapT();
         populateLap(sportSession, lap);
         populateTracks(runtasticActivity.getGpsData(), lap.getTrack());
@@ -86,7 +84,7 @@ public class TCXBuilder implements Exporter{
         activities.getActivity().add(activity);
         root.setActivities(activities);
 
-        Path outputFile = Paths.get( destinationDirectory.getFileName().toString(), activity.getId().toString() + ".tcx");
+        Path outputFile = Paths.get( destinationDirectory.getFileName().toString(), sportSession.getId() + ".tcx");
         writeContent(root, outputFile);
         LOG.info("Activity written to {}", outputFile);
 

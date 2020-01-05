@@ -1,9 +1,10 @@
 
-        package json;
+package json;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,8 +16,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * The Root Schema
  * <p>
- *
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -61,315 +60,280 @@ public class SportSession {
     /**
      * The Start_time Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("start_time")
     private Long startTime = 0L;
     /**
      * The End_time Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("end_time")
     private Long endTime = 0L;
     /**
      * The Created_at Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("created_at")
     private Long createdAt = 0L;
     /**
      * The Updated_at Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("updated_at")
     private Long updatedAt = 0L;
     /**
      * The Start_time_timezone_offset Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("start_time_timezone_offset")
     private Long startTimeTimezoneOffset = 0L;
     /**
      * The End_time_timezone_offset Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("end_time_timezone_offset")
     private Long endTimeTimezoneOffset = 0L;
     /**
      * The Distance Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("distance")
     private Long distance = 0L;
     /**
      * The Duration Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("duration")
     private Long duration = 0L;
     /**
      * The Elevation_gain Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_gain")
     private Long elevationGain = 0L;
     /**
      * The Elevation_loss Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_loss")
     private Long elevationLoss = 0L;
     /**
      * The Average_speed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("average_speed")
     private Double averageSpeed = 0.0D;
     /**
      * The Calories Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("calories")
     private Long calories = 0L;
     /**
      * The Longitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("longitude")
     private Double longitude = 0.0D;
     /**
      * The Latitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("latitude")
     private Double latitude = 0.0D;
     /**
      * The Max_speed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("max_speed")
     private Double maxSpeed = 0.0D;
     /**
      * The Pause_duration Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("pause_duration")
     private Long pauseDuration = 0L;
     /**
      * The Duration_per_km Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("duration_per_km")
     private Long durationPerKm = 0L;
     /**
      * The Temperature Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("temperature")
     private Long temperature = 0L;
     /**
      * The Notes Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("notes")
     private String notes = "";
     /**
      * The Max_step_frequency Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("max_step_frequency")
     private Long maxStepFrequency = 0L;
     /**
      * The Avg_step_frequency Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("avg_step_frequency")
     private Long avgStepFrequency = 0L;
     /**
      * The Total_steps Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("total_steps")
     private Long totalSteps = 0L;
     /**
      * The Manual Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("manual")
     private Boolean manual = false;
     /**
      * The Edited Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("edited")
     private Boolean edited = false;
     /**
      * The Completed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("completed")
     private Boolean completed = false;
     /**
      * The Live_tracking_active Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("live_tracking_active")
     private Boolean liveTrackingActive = false;
     /**
      * The Live_tracking_enabled Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("live_tracking_enabled")
     private Boolean liveTrackingEnabled = false;
     /**
      * The Cheering_enabled Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("cheering_enabled")
     private Boolean cheeringEnabled = false;
     /**
      * The Indoor Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("indoor")
     private Boolean indoor = false;
     /**
      * The Id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("id")
     private String id = "";
     /**
      * The Weather_condition_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("weather_condition_id")
     private String weatherConditionId = "";
     /**
      * The Surface_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("surface_id")
     private String surfaceId = "";
     /**
      * The Subjective_feeling_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("subjective_feeling_id")
     private String subjectiveFeelingId = "";
     /**
      * The Sport_type_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("sport_type_id")
     private String sportTypeId = "";
     /**
      * The User_equipment_ids Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("user_equipment_ids")
     private List<String> userEquipmentIds = null;
@@ -379,9 +343,8 @@ public class SportSession {
     /**
      * The Start_time Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("start_time")
     public Long getStartTime() {
@@ -391,9 +354,8 @@ public class SportSession {
     /**
      * The Start_time Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("start_time")
     public void setStartTime(Long startTime) {
@@ -403,9 +365,8 @@ public class SportSession {
     /**
      * The End_time Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("end_time")
     public Long getEndTime() {
@@ -415,9 +376,8 @@ public class SportSession {
     /**
      * The End_time Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("end_time")
     public void setEndTime(Long endTime) {
@@ -427,9 +387,8 @@ public class SportSession {
     /**
      * The Created_at Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("created_at")
     public Long getCreatedAt() {
@@ -439,9 +398,8 @@ public class SportSession {
     /**
      * The Created_at Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("created_at")
     public void setCreatedAt(Long createdAt) {
@@ -451,9 +409,8 @@ public class SportSession {
     /**
      * The Updated_at Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("updated_at")
     public Long getUpdatedAt() {
@@ -463,9 +420,8 @@ public class SportSession {
     /**
      * The Updated_at Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("updated_at")
     public void setUpdatedAt(Long updatedAt) {
@@ -475,9 +431,8 @@ public class SportSession {
     /**
      * The Start_time_timezone_offset Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("start_time_timezone_offset")
     public Long getStartTimeTimezoneOffset() {
@@ -487,9 +442,8 @@ public class SportSession {
     /**
      * The Start_time_timezone_offset Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("start_time_timezone_offset")
     public void setStartTimeTimezoneOffset(Long startTimeTimezoneOffset) {
@@ -499,9 +453,8 @@ public class SportSession {
     /**
      * The End_time_timezone_offset Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("end_time_timezone_offset")
     public Long getEndTimeTimezoneOffset() {
@@ -511,9 +464,8 @@ public class SportSession {
     /**
      * The End_time_timezone_offset Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("end_time_timezone_offset")
     public void setEndTimeTimezoneOffset(Long endTimeTimezoneOffset) {
@@ -523,9 +475,8 @@ public class SportSession {
     /**
      * The Distance Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("distance")
     public Long getDistance() {
@@ -535,9 +486,8 @@ public class SportSession {
     /**
      * The Distance Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("distance")
     public void setDistance(Long distance) {
@@ -547,9 +497,8 @@ public class SportSession {
     /**
      * The Duration Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("duration")
     public Long getDuration() {
@@ -559,9 +508,8 @@ public class SportSession {
     /**
      * The Duration Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("duration")
     public void setDuration(Long duration) {
@@ -571,9 +519,8 @@ public class SportSession {
     /**
      * The Elevation_gain Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_gain")
     public Long getElevationGain() {
@@ -583,9 +530,8 @@ public class SportSession {
     /**
      * The Elevation_gain Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_gain")
     public void setElevationGain(Long elevationGain) {
@@ -595,9 +541,8 @@ public class SportSession {
     /**
      * The Elevation_loss Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_loss")
     public Long getElevationLoss() {
@@ -607,9 +552,8 @@ public class SportSession {
     /**
      * The Elevation_loss Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_loss")
     public void setElevationLoss(Long elevationLoss) {
@@ -619,9 +563,8 @@ public class SportSession {
     /**
      * The Average_speed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("average_speed")
     public Double getAverageSpeed() {
@@ -631,9 +574,8 @@ public class SportSession {
     /**
      * The Average_speed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("average_speed")
     public void setAverageSpeed(Double averageSpeed) {
@@ -643,9 +585,8 @@ public class SportSession {
     /**
      * The Calories Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("calories")
     public Long getCalories() {
@@ -655,9 +596,8 @@ public class SportSession {
     /**
      * The Calories Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("calories")
     public void setCalories(Long calories) {
@@ -667,9 +607,8 @@ public class SportSession {
     /**
      * The Longitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("longitude")
     public Double getLongitude() {
@@ -679,9 +618,8 @@ public class SportSession {
     /**
      * The Longitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("longitude")
     public void setLongitude(Double longitude) {
@@ -691,9 +629,8 @@ public class SportSession {
     /**
      * The Latitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("latitude")
     public Double getLatitude() {
@@ -703,9 +640,8 @@ public class SportSession {
     /**
      * The Latitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("latitude")
     public void setLatitude(Double latitude) {
@@ -715,9 +651,8 @@ public class SportSession {
     /**
      * The Max_speed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("max_speed")
     public Double getMaxSpeed() {
@@ -727,9 +662,8 @@ public class SportSession {
     /**
      * The Max_speed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("max_speed")
     public void setMaxSpeed(Double maxSpeed) {
@@ -739,9 +673,8 @@ public class SportSession {
     /**
      * The Pause_duration Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("pause_duration")
     public Long getPauseDuration() {
@@ -751,9 +684,8 @@ public class SportSession {
     /**
      * The Pause_duration Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("pause_duration")
     public void setPauseDuration(Long pauseDuration) {
@@ -763,9 +695,8 @@ public class SportSession {
     /**
      * The Duration_per_km Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("duration_per_km")
     public Long getDurationPerKm() {
@@ -775,9 +706,8 @@ public class SportSession {
     /**
      * The Duration_per_km Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("duration_per_km")
     public void setDurationPerKm(Long durationPerKm) {
@@ -787,9 +717,8 @@ public class SportSession {
     /**
      * The Temperature Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("temperature")
     public Long getTemperature() {
@@ -799,9 +728,8 @@ public class SportSession {
     /**
      * The Temperature Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("temperature")
     public void setTemperature(Long temperature) {
@@ -811,9 +739,8 @@ public class SportSession {
     /**
      * The Notes Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("notes")
     public String getNotes() {
@@ -823,9 +750,8 @@ public class SportSession {
     /**
      * The Notes Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("notes")
     public void setNotes(String notes) {
@@ -835,9 +761,8 @@ public class SportSession {
     /**
      * The Max_step_frequency Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("max_step_frequency")
     public Long getMaxStepFrequency() {
@@ -847,9 +772,8 @@ public class SportSession {
     /**
      * The Max_step_frequency Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("max_step_frequency")
     public void setMaxStepFrequency(Long maxStepFrequency) {
@@ -859,9 +783,8 @@ public class SportSession {
     /**
      * The Avg_step_frequency Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("avg_step_frequency")
     public Long getAvgStepFrequency() {
@@ -871,9 +794,8 @@ public class SportSession {
     /**
      * The Avg_step_frequency Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("avg_step_frequency")
     public void setAvgStepFrequency(Long avgStepFrequency) {
@@ -883,9 +805,8 @@ public class SportSession {
     /**
      * The Total_steps Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("total_steps")
     public Long getTotalSteps() {
@@ -895,9 +816,8 @@ public class SportSession {
     /**
      * The Total_steps Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("total_steps")
     public void setTotalSteps(Long totalSteps) {
@@ -907,9 +827,8 @@ public class SportSession {
     /**
      * The Manual Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("manual")
     public Boolean getManual() {
@@ -919,9 +838,8 @@ public class SportSession {
     /**
      * The Manual Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("manual")
     public void setManual(Boolean manual) {
@@ -931,9 +849,8 @@ public class SportSession {
     /**
      * The Edited Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("edited")
     public Boolean getEdited() {
@@ -943,9 +860,8 @@ public class SportSession {
     /**
      * The Edited Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("edited")
     public void setEdited(Boolean edited) {
@@ -955,9 +871,8 @@ public class SportSession {
     /**
      * The Completed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("completed")
     public Boolean getCompleted() {
@@ -967,9 +882,8 @@ public class SportSession {
     /**
      * The Completed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("completed")
     public void setCompleted(Boolean completed) {
@@ -979,9 +893,8 @@ public class SportSession {
     /**
      * The Live_tracking_active Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("live_tracking_active")
     public Boolean getLiveTrackingActive() {
@@ -991,9 +904,8 @@ public class SportSession {
     /**
      * The Live_tracking_active Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("live_tracking_active")
     public void setLiveTrackingActive(Boolean liveTrackingActive) {
@@ -1003,9 +915,8 @@ public class SportSession {
     /**
      * The Live_tracking_enabled Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("live_tracking_enabled")
     public Boolean getLiveTrackingEnabled() {
@@ -1015,9 +926,8 @@ public class SportSession {
     /**
      * The Live_tracking_enabled Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("live_tracking_enabled")
     public void setLiveTrackingEnabled(Boolean liveTrackingEnabled) {
@@ -1027,9 +937,8 @@ public class SportSession {
     /**
      * The Cheering_enabled Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("cheering_enabled")
     public Boolean getCheeringEnabled() {
@@ -1039,9 +948,8 @@ public class SportSession {
     /**
      * The Cheering_enabled Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("cheering_enabled")
     public void setCheeringEnabled(Boolean cheeringEnabled) {
@@ -1051,9 +959,8 @@ public class SportSession {
     /**
      * The Indoor Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("indoor")
     public Boolean getIndoor() {
@@ -1063,9 +970,8 @@ public class SportSession {
     /**
      * The Indoor Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("indoor")
     public void setIndoor(Boolean indoor) {
@@ -1075,9 +981,8 @@ public class SportSession {
     /**
      * The Id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("id")
     public String getId() {
@@ -1087,9 +992,8 @@ public class SportSession {
     /**
      * The Id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("id")
     public void setId(String id) {
@@ -1099,9 +1003,8 @@ public class SportSession {
     /**
      * The Weather_condition_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("weather_condition_id")
     public String getWeatherConditionId() {
@@ -1111,9 +1014,8 @@ public class SportSession {
     /**
      * The Weather_condition_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("weather_condition_id")
     public void setWeatherConditionId(String weatherConditionId) {
@@ -1123,9 +1025,8 @@ public class SportSession {
     /**
      * The Surface_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("surface_id")
     public String getSurfaceId() {
@@ -1135,9 +1036,8 @@ public class SportSession {
     /**
      * The Surface_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("surface_id")
     public void setSurfaceId(String surfaceId) {
@@ -1147,9 +1047,8 @@ public class SportSession {
     /**
      * The Subjective_feeling_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("subjective_feeling_id")
     public String getSubjectiveFeelingId() {
@@ -1159,9 +1058,8 @@ public class SportSession {
     /**
      * The Subjective_feeling_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("subjective_feeling_id")
     public void setSubjectiveFeelingId(String subjectiveFeelingId) {
@@ -1171,9 +1069,8 @@ public class SportSession {
     /**
      * The Sport_type_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("sport_type_id")
     public String getSportTypeId() {
@@ -1183,9 +1080,8 @@ public class SportSession {
     /**
      * The Sport_type_id Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("sport_type_id")
     public void setSportTypeId(String sportTypeId) {
@@ -1195,9 +1091,8 @@ public class SportSession {
     /**
      * The User_equipment_ids Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("user_equipment_ids")
     public List<String> getUserEquipmentIds() {
@@ -1207,9 +1102,8 @@ public class SportSession {
     /**
      * The User_equipment_ids Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("user_equipment_ids")
     public void setUserEquipmentIds(List<String> userEquipmentIds) {

@@ -2,6 +2,7 @@ package json;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import com.fasterxml.jackson.annotation.JsonAnySetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -13,8 +14,6 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * The Items Schema
  * <p>
- *
- *
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -36,108 +35,96 @@ public class GPSDatum {
     /**
      * The Version Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("version")
     private Long version = 0L;
     /**
      * The Timestamp Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("timestamp")
     private String timestamp = "";
     /**
      * The Longitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("longitude")
     private Double longitude = 0.0D;
     /**
      * The Latitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("latitude")
     private Double latitude = 0.0D;
     /**
      * The Altitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("altitude")
     private Double altitude = 0.0D;
     /**
      * The Accuracy_v Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("accuracy_v")
     private Long accuracyV = 0L;
     /**
      * The Accuracy_h Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("accuracy_h")
     private Long accuracyH = 0L;
     /**
      * The Speed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("speed")
     private Long speed = 0L;
     /**
      * The Duration Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("duration")
     private Long duration = 0L;
     /**
      * The Distance Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("distance")
     private Long distance = 0L;
     /**
      * The Elevation_gain Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_gain")
     private Long elevationGain = 0L;
     /**
      * The Elevation_loss Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_loss")
     private Long elevationLoss = 0L;
@@ -147,9 +134,8 @@ public class GPSDatum {
     /**
      * The Version Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("version")
     public Long getVersion() {
@@ -159,9 +145,8 @@ public class GPSDatum {
     /**
      * The Version Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("version")
     public void setVersion(Long version) {
@@ -171,9 +156,8 @@ public class GPSDatum {
     /**
      * The Timestamp Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("timestamp")
     public String getTimestamp() {
@@ -183,9 +167,8 @@ public class GPSDatum {
     /**
      * The Timestamp Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("timestamp")
     public void setTimestamp(String timestamp) {
@@ -195,9 +178,8 @@ public class GPSDatum {
     /**
      * The Longitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("longitude")
     public Double getLongitude() {
@@ -207,9 +189,8 @@ public class GPSDatum {
     /**
      * The Longitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("longitude")
     public void setLongitude(Double longitude) {
@@ -219,9 +200,8 @@ public class GPSDatum {
     /**
      * The Latitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("latitude")
     public Double getLatitude() {
@@ -231,9 +211,8 @@ public class GPSDatum {
     /**
      * The Latitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("latitude")
     public void setLatitude(Double latitude) {
@@ -243,9 +222,8 @@ public class GPSDatum {
     /**
      * The Altitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("altitude")
     public Double getAltitude() {
@@ -255,9 +233,8 @@ public class GPSDatum {
     /**
      * The Altitude Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("altitude")
     public void setAltitude(Double altitude) {
@@ -267,9 +244,8 @@ public class GPSDatum {
     /**
      * The Accuracy_v Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("accuracy_v")
     public Long getAccuracyV() {
@@ -279,9 +255,8 @@ public class GPSDatum {
     /**
      * The Accuracy_v Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("accuracy_v")
     public void setAccuracyV(Long accuracyV) {
@@ -291,9 +266,8 @@ public class GPSDatum {
     /**
      * The Accuracy_h Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("accuracy_h")
     public Long getAccuracyH() {
@@ -303,9 +277,8 @@ public class GPSDatum {
     /**
      * The Accuracy_h Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("accuracy_h")
     public void setAccuracyH(Long accuracyH) {
@@ -315,9 +288,8 @@ public class GPSDatum {
     /**
      * The Speed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("speed")
     public Long getSpeed() {
@@ -327,9 +299,8 @@ public class GPSDatum {
     /**
      * The Speed Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("speed")
     public void setSpeed(Long speed) {
@@ -339,9 +310,8 @@ public class GPSDatum {
     /**
      * The Duration Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("duration")
     public Long getDuration() {
@@ -351,9 +321,8 @@ public class GPSDatum {
     /**
      * The Duration Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("duration")
     public void setDuration(Long duration) {
@@ -363,9 +332,8 @@ public class GPSDatum {
     /**
      * The Distance Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("distance")
     public Long getDistance() {
@@ -375,9 +343,8 @@ public class GPSDatum {
     /**
      * The Distance Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("distance")
     public void setDistance(Long distance) {
@@ -387,9 +354,8 @@ public class GPSDatum {
     /**
      * The Elevation_gain Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_gain")
     public Long getElevationGain() {
@@ -399,9 +365,8 @@ public class GPSDatum {
     /**
      * The Elevation_gain Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_gain")
     public void setElevationGain(Long elevationGain) {
@@ -411,9 +376,8 @@ public class GPSDatum {
     /**
      * The Elevation_loss Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_loss")
     public Long getElevationLoss() {
@@ -423,9 +387,8 @@ public class GPSDatum {
     /**
      * The Elevation_loss Schema
      * <p>
-     *
+     * <p>
      * (Required)
-     *
      */
     @JsonProperty("elevation_loss")
     public void setElevationLoss(Long elevationLoss) {
