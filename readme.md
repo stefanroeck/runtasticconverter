@@ -1,10 +1,12 @@
-Runtastic Converter
-Converts Runtastic full export to TCX files.
+# Runtastic Converter
+Converts Runtastic full export to TCX or GPX files. Export can be triggered on the Runtastic Webpage after login at the profile settings page.
+
+TCX is GARMIN specific and contains more meta information, like total distance, calories, etc. 
+GPX is more general purpose and basically just contains waypoints coordinates.
 
 Usage:
 
-    java -jar runtasticConverter.js -f <sportSessionJsonFile>
-    java -jar runtasticConverter.js -d <sportSessionDirectory>
+    java -jar runtasticConverter.jar [gpx|tcx] <sportSessionJsonFile>|<sportSessionDirectory> <outputDirectory>
     
 
 The Runtastic full export can be generated once per week on the settings page in the Web UI.
@@ -23,3 +25,14 @@ It is provided as a ZIP file which contains all data and needs to be extracted. 
         [...]
 
 This program processes the json files inside of the Sport-sessions folder and correlates them with the data in GPS-data.
+
+## Development
+### Build
+    mvn
+    
+
+### Schema files
+JAXB POJOs for TCX and GPX export formats have been generated with Java Tooling, see xjc.
+Jackson POJOs for Runtastic JSON files have been generate like this:
++ Derive JSON Schema from JSON files: https://www.jsonschema.net/
++ Generate POJOs from JSON Schema: http://www.jsonschema2pojo.org/
