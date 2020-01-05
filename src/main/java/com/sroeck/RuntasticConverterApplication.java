@@ -12,11 +12,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collections;
+import java.util.List;
 
 import static java.util.Arrays.stream;
+import static java.util.stream.Collectors.toList;
 
 
-public class RuntasticConverterApplication  {
+public class RuntasticConverterApplication {
 
     private enum ExportFormat {
         GPX(new GPXBuilder()),
@@ -51,20 +54,39 @@ public class RuntasticConverterApplication  {
             return;
         }
 
-        new RuntasticConverterApplication().processSportSessionFileOrDirectory(ExportFormat.parse(args[0]), args[1], Paths.get(args[2]));
+        new RuntasticConverterApplication().processSportSessionFileOrDirectory(ExportFormat.parse(args[0]), Paths.get(args[1]), Paths.get(args[2]));
     }
 
 
-    private void processSportSessionFileOrDirectory(ExportFormat exportFormat, String fileOrDirectory, Path destinationDirectory) throws IOException {
-        Path sessionFile = Paths.get(fileOrDirectory);
-        if (!Files.exists(sessionFile) ){
-            throw new IllegalArgumentException("SportSessionFile " + fileOrDirectory + " cannot be read.");
+    private void processSportSessionFileOrDirectory(ExportFormat exportFormat, Path fileOrDirectory, Path destinationDirectory) throws IOException {
+        if (!Files.exists(fileOrDirectory)) {
+            throw new IllegalArgumentException("Source " + fileOrDirectory + " does not exist.");
         }
-        Files.createDirectories(destinationDirectory);
+        if (!Files.exists(destinationDirectory)) {
+            Files.createDirectory(destinationDirectory);
+        }
 
-        // TODO: Implement directory handling
+        List<Path> sportSessionFiles;
+        if (fileOrDirectory.toFile().isDirectory()) {
+            sportSessionFiles = Files.list(fileOrDirectory).filter(f -> f.toString().endsWith(".json")).collect(toList());
+        } else {
+            sportSessionFiles = Collections.singletonList(fileOrDirectory);
+        }
+
+        if (sportSessionFiles.isEmpty()) {
+            LOG.error("No json files found in {}", fileOrDirectory);
+            return;
+        }
+        LOG.info("Exporting {} files into {}", sportSessionFiles.size(), destinationDirectory);
+
+        for (Path sessionFile : sportSessionFiles) {
+            exportSessionFile(exportFormat, sessionFile, destinationDirectory);
+        }
+    }
+
+    private void exportSessionFile(ExportFormat exportFormat, Path sessionFile, Path destinationDirectory) throws IOException {
         Path gpsDataFile = sessionFile.getParent().resolve("GPS-data/" + sessionFile.getFileName());
-        if (!Files.exists(gpsDataFile) ){
+        if (!Files.exists(gpsDataFile)) {
             LOG.error("No GPS data file found at {}", gpsDataFile);
             return;
         }
@@ -73,6 +95,7 @@ public class RuntasticConverterApplication  {
         LOG.info("Parsed {}", runtasticActivity.getInfo());
 
         exportFormat.getExporter().generateActivity(runtasticActivity, destinationDirectory);
+
     }
 
     private static boolean matches(String argument, String candidate1, String candidate2) {

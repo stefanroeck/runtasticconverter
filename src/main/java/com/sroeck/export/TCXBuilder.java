@@ -84,7 +84,7 @@ public class TCXBuilder implements Exporter{
         activities.getActivity().add(activity);
         root.setActivities(activities);
 
-        Path outputFile = Paths.get( destinationDirectory.getFileName().toString(), sportSession.getId() + ".tcx");
+        Path outputFile = destinationDirectory.resolve(sportSession.getId() + ".gpx");
         writeContent(root, outputFile);
         LOG.info("Activity written to {}", outputFile);
 

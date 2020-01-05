@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.List;
 
 import static com.sroeck.export.Converters.toXmlGregorianCal;
@@ -23,7 +22,7 @@ import static java.util.stream.Collectors.toList;
 
 public class GPXBuilder implements Exporter{
 
-    private static final Logger LOG = LoggerFactory.getLogger(TCXBuilder.class);
+    private static final Logger LOG = LoggerFactory.getLogger(GPXBuilder.class);
 
     private void writeContent(GpxType root, Path destination) throws IOException {
         try {
@@ -46,7 +45,7 @@ public class GPXBuilder implements Exporter{
         root.setMetadata(toMetadata(sportSession));
         root.getTrk().add(toTrack(runtasticActivity));
 
-        Path outputFile = Paths.get( destinationDirectory.getFileName().toString(), sportSession.getId() + ".gpx");
+        Path outputFile = destinationDirectory.resolve(sportSession.getId() + ".gpx");
         writeContent(root, outputFile);
         LOG.info("Activity written to {}", outputFile);
 
